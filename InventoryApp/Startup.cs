@@ -24,10 +24,13 @@ namespace InventoryApp
             services.AddDbContext<DBContext>(options =>
             options.UseNpgsql("Host = ziggy.db.elephantsql.com; Database = ddkntivy; Username = ddkntivy; Password = Vj_dJOautdsYm4cvwI36cL1fPbMehqIQ"));
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "InventoryApp", Version = "v1" });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "InventoryApp", Version = "v1" });
+            });
+
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +42,9 @@ namespace InventoryApp
                 //app.UseSwagger();
                 //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InventoryApp v1"));
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InventoryApp v1"));
 
             app.UseHttpsRedirection();
 
