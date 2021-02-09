@@ -1,13 +1,15 @@
-﻿using MongoDB.Bson;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace InventoryApp.Models
 {
-    public class User
+    public class Store
     {
         public string Id { get; set; }
 
-        public string names { get; set; }
+        public string fullName { get; set; }
 
         public string email { get; set; }
 
@@ -24,6 +26,10 @@ namespace InventoryApp.Models
         public string area { get; set; }
 
         public string street { get; set; }
+
+        [ForeignKey("User")]
+        public string UserID { get; set; }
+        public virtual User User { get; set; }
 
     }
 }

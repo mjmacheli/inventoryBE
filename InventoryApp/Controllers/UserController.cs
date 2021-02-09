@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using InventoryApp.Models;
-using InventoryApp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventoryApp.Controllers
@@ -9,66 +9,35 @@ namespace InventoryApp.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly DBContext dBContext;
 
-        public UserController(UserService userService)
+        public UserController(DBContext DBContext)
         {
-            _userService = userService;
-        }
-
-        [HttpGet]
-        public ActionResult<List<User>> Get() =>
-            _userService.Get();
-
-        [HttpGet("{id:length(24)}", Name = "GetUser")]
-        public ActionResult<User> Get(string id)
-        {
-            var user = _userService.Get(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return user;
+            dBContext = DBContext;
         }
 
         [HttpPost]
-        public ActionResult<User> Create(User user)
+        public IActionResult Create(User user)
         {
-            _userService.Create(user);
+            user.Id = System.Guid.NewGuid().ToString();
 
-            return CreatedAtRoute("GetUser", new { id = user.Id.ToString() }, user);
+            dBContext.Add(user);
+            dBContext.SaveChanges();
+
+            return Ok(User);
         }
 
-        [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, User userIn)
+        [HttpPost("login")]
+        public IActionResult Login(string email, string password)
         {
-            var user = _userService.Get(id);
-
+            var user = dBContext.users.FirstOrDefault(x => x.email == email && x.password == password);
             if (user == null)
             {
                 return NotFound();
             }
 
-            _userService.Update(id, userIn);
-
-            return NoContent();
+            return Ok(user);
         }
 
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id)
-        {
-            var user = _userService.Get(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            _userService.Remove(user.Id);
-
-            return NoContent();
-        }
     }
 }

@@ -2,6 +2,7 @@ using InventoryApp.Models;
 using InventoryApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,14 +23,9 @@ namespace InventoryApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<InventoryAppDataSettings>(
-            Configuration.GetSection(nameof(InventoryAppDataSettings)));
+            services.AddDbContext<DBContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("DBContext")));
 
-            services.AddSingleton<IinventoryAppDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<InventoryAppDataSettings>>().Value);
-
-            services.AddSingleton<UserService>();
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InventoryApp", Version = "v1" });

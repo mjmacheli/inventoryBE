@@ -22,6 +22,9 @@ namespace InventoryApp.Services
         public User Get(string id) =>
            _users.Find<User>(user => user.Id == id).FirstOrDefault();
 
+        public User Login(string email, string password) =>
+           _users.Find<User>(user => user.email == email && user.password == password).FirstOrDefault();
+
         public User Create(User user)
         {
             _users.InsertOne(user);
