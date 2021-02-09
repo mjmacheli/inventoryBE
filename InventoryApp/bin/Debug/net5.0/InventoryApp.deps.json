@@ -30,6 +30,7 @@
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.2",
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.Design": "5.0.2",
+          "Microsoft.OpenApi": "1.2.3",
           "MongoDB.Driver": "2.11.6",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.2",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -654,12 +655,12 @@
           "runtimes/win/native/snappy32.dll": {
             "rid": "win",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.1.1.7"
           },
           "runtimes/win/native/snappy64.dll": {
             "rid": "win",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.1.1.7"
           }
         },
         "compile": {

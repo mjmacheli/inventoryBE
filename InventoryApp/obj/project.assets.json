@@ -6094,6 +6094,7 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.2",
       "Microsoft.EntityFrameworkCore >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.2",
+      "Microsoft.OpenApi >= 1.2.3",
       "MongoDB.Driver >= 2.11.6",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 5.0.2",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -6112,7 +6113,7 @@
       "outputPath": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mjmacheli/.nuget/NuGet/NuGet.Config"
+        "/Users/mjmacheli/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6163,6 +6164,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "Microsoft.OpenApi": {
+            "target": "Package",
+            "version": "[1.2.3, )"
           },
           "MongoDB.Driver": {
             "target": "Package",
