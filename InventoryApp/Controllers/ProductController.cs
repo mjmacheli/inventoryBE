@@ -51,7 +51,7 @@ namespace InventoryApp.Controllers
             List<StoreProducts> products = new List<StoreProducts>();
             foreach(StoreProducts product in storeProducts){
                 product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
-                products.add(product);
+                products.Add(product);
             }
             return Ok(products);
         }
