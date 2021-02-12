@@ -47,7 +47,12 @@ namespace InventoryApp.Controllers
         public IActionResult storeProducts(string catergoryID, string storeID ){
             var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.product.catergoryID == catergoryID).ToList();
 
-            return Ok(storeProducts);
+            List<StoreProducts> products = new List<StoreProducts>{};
+            foreach(StoreProducts product in storeProducts){
+                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                products.add(product);
+            }
+            return Ok(products);
         }
     }
 }
