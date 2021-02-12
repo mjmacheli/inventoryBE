@@ -26,6 +26,19 @@ namespace InventoryApp.Controllers
             return Ok(User);
         }
 
+        [HttpGet("get-users")]
+        public IActionResult test(string email, string password)
+        {
+            var user = dBContext.users.ToList();
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+
+
         [HttpPost("login")]
         public IActionResult Login(string email, string password)
         {

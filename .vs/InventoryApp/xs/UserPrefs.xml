@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{C8A179B5-5136-4931-9821-1C5FEAC3ADD9}|Default">
+  <MonoDevelop.Ide.ItemProperties.InventoryApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InventoryApp" expanded="True">
+            <Node name="InventoryApp" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Library/Frameworks/Mono.framework/Versions/6.8.0/lib/mono/msbuild/Current/bin/Microsoft.Common.CurrentVersion.targets" line="1193" column="5" />
+      <Breakpoint file="/usr/local/share/dotnet/sdk/5.0.103/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets" line="54" column="5" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

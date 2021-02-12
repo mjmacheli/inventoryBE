@@ -29,7 +29,7 @@ namespace InventoryApp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InventoryApp", Version = "v1" });
             });
 
-            services.AddMvc();
+            services.AddControllers();
 
         }
 
@@ -50,12 +50,12 @@ namespace InventoryApp
 
             app.UseRouting();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+               endpoints.MapControllers();
+            });
         }
     }
 }
