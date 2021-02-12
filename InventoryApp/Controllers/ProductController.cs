@@ -45,7 +45,7 @@ namespace InventoryApp.Controllers
 
         [HttpGet("get-store-products")] 
         public IActionResult storeProducts(string catergoryID, string storeID ){
-            var storeProducts = dBContext.storeProducts.Wshere(x => x.storeID == storeID && x.product.catergoryID == catergoryID).ToList();
+            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.product.catergoryID == catergoryID).ToList();
 
             return Ok(storeProducts);
         }
