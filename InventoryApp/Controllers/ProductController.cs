@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using InventoryApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Collection.Generic;
+using System.Collections.Generic:
 
 namespace InventoryApp.Controllers
 {
