@@ -30,6 +30,24 @@ namespace InventoryApp.Controllers
         public IActionResult getProductByBarcode(string barcode)
         {
             return Ok(dBContext.products.FirstOrDefault(x => x.barcode == barcode));
-        }        
+        }
+
+        [HttpPost("add-catergory")]
+        public IActionResult addcatergory(catergory catergory){
+            catergory.id = System.Guid.NewGuid().ToString();
+
+            dBContext.Add(catergory);
+            dBContext.SaveChanges();
+
+            return Ok(catergory);
+
+        }
+
+        [HttpGet("get-store-products")] 
+        public IActionResult storeProducts(string catergoryID, string storeID ){
+            list<StoreProducts> storeProducts = dBContext.storeProducts.where(x => x.storeID == storeID && x.product.catergoryID == catergoryID).ToList();
+            
+            return Ok(storeProducts);
+        }
     }
 }

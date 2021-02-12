@@ -1,15 +1,18 @@
 ﻿<Properties StartupConfiguration="{C8A179B5-5136-4931-9821-1C5FEAC3ADD9}|Default">
   <MonoDevelop.Ide.ItemProperties.InventoryApp PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="InventoryApp/Controllers/ProductController.cs">
+    <Files>
+      <File FileName="InventoryApp/Controllers/StoreController.cs" Line="1" Column="1" />
+      <File FileName="InventoryApp/Controllers/ProductController.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="InventoryApp" expanded="True">
             <Node name="InventoryApp" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ProductController.cs" selected="True" />
               </Node>
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

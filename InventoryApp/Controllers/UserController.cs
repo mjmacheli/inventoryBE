@@ -23,7 +23,7 @@ namespace InventoryApp.Controllers
             dBContext.Add(user);
             dBContext.SaveChanges();
 
-            return Ok(User);
+            return Ok(user);
         }
 
         [HttpGet("get-users")]
