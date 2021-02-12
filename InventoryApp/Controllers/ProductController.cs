@@ -55,5 +55,18 @@ namespace InventoryApp.Controllers
             }
             return Ok(products);
         }
+
+        [HttpGet("get-store-catergory")] 
+        public IActionResult storeProducts(string storeID ){
+            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID).ToList();
+
+            List<catergory> catergories = new List<catergory>();
+            foreach(StoreProducts product in storeProducts){
+                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                catergory catergory = dBContext.catergory.FirstOrDefault(x => x.id == product.product.catergoryID);
+                catergories.Add(catergory);
+            }
+            return Ok(catergories);
+        }
     }
 }
