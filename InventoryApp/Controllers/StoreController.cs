@@ -39,7 +39,7 @@ namespace InventoryApp.Controllers
             return Ok(dBContext.stores.Where(x => x.UserID == userID));
         }
 
-        [HttpGet("add-store-product")]
+        [HttpPost("add-store-product")]
         public IActionResult addStoreProduct(StoreProducts storeProduct)
         {
             storeProduct.id = System.Guid.NewGuid().ToString();
