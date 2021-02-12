@@ -57,7 +57,7 @@ namespace InventoryApp.Controllers
         }
 
         [HttpGet("get-store-catergory")] 
-        public IActionResult storeProducts(string storeID ){
+        public IActionResult storeCAtergories(string storeID ){
             var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID).ToList();
 
             List<catergory> catergories = new List<catergory>();
