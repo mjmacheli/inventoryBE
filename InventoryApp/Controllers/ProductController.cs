@@ -63,7 +63,7 @@ namespace InventoryApp.Controllers
             List<catergory> catergories = new List<catergory>();
             foreach(StoreProducts product in storeProducts){
                 product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
-                catergory catergory = dBContext.catergory.FirstOrDefault(x => x.id == product.product.catergoryID);
+                catergory catergory = dBContext.catergories.FirstOrDefault(x => x.id == product.product.catergoryID);
                 catergories.Add(catergory);
             }
             return Ok(catergories);
