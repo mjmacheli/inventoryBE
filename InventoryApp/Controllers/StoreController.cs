@@ -36,7 +36,7 @@ namespace InventoryApp.Controllers
         [HttpGet("get-user-stores/{userID}")]
         public IActionResult getUserStores(string userID)
         {
-            return Ok(dBContext.stores.Where(x => x.user.id == userID));
+            return Ok(dBContext.stores.Where(x => x.userId == userID));
         }
 
         [HttpPost("add-store-product")]

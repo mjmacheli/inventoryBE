@@ -1,5 +1,4 @@
-﻿using System;
-namespace InventoryApp.Models
+﻿namespace InventoryApp.Models
 {
     public class catergory
     {

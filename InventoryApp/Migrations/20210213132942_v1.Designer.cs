@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace InventoryApp.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210209101105_products")]
-    partial class products
+    [Migration("20210213132942_v1")]
+    partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace InventoryApp.Migrations
 
             modelBuilder.Entity("InventoryApp.Models.Product", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("id")
                         .HasColumnType("text");
 
                     b.Property<string>("barcode")
@@ -37,7 +37,7 @@ namespace InventoryApp.Migrations
                     b.Property<string>("productName")
                         .HasColumnType("text");
 
-                    b.HasKey("ID");
+                    b.HasKey("id");
 
                     b.HasIndex("catergoryID");
 
@@ -46,10 +46,7 @@ namespace InventoryApp.Migrations
 
             modelBuilder.Entity("InventoryApp.Models.Store", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserID")
+                    b.Property<string>("id")
                         .HasColumnType("text");
 
                     b.Property<string>("area")
@@ -58,30 +55,25 @@ namespace InventoryApp.Migrations
                     b.Property<string>("city")
                         .HasColumnType("text");
 
-                    b.Property<string>("country")
+                    b.Property<int>("code")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("name")
                         .HasColumnType("text");
 
-                    b.Property<string>("dob")
-                        .HasColumnType("text");
-
-                    b.Property<string>("email")
-                        .HasColumnType("text");
-
-                    b.Property<string>("fullName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("password")
+                    b.Property<string>("number")
                         .HasColumnType("text");
 
                     b.Property<string>("province")
                         .HasColumnType("text");
 
-                    b.Property<string>("street")
+                    b.Property<string>("streetName")
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.Property<string>("userId")
+                        .HasColumnType("text");
 
-                    b.HasIndex("UserID");
+                    b.HasKey("id");
 
                     b.ToTable("stores");
                 });
@@ -117,7 +109,7 @@ namespace InventoryApp.Migrations
 
             modelBuilder.Entity("InventoryApp.Models.User", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("id")
                         .HasColumnType("text");
 
                     b.Property<string>("area")
@@ -147,7 +139,7 @@ namespace InventoryApp.Migrations
                     b.Property<string>("street")
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("users");
                 });
@@ -172,15 +164,6 @@ namespace InventoryApp.Migrations
                         .HasForeignKey("catergoryID");
 
                     b.Navigation("catergory");
-                });
-
-            modelBuilder.Entity("InventoryApp.Models.Store", b =>
-                {
-                    b.HasOne("InventoryApp.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("InventoryApp.Models.StoreProducts", b =>

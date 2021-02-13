@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InventoryApp.Models
 {
@@ -22,8 +19,9 @@ namespace InventoryApp.Models
 
         public string area { get; set; }
 
+
         [ForeignKey("User")]
-        public User user { get; set; }
+        public string userId { get; set; }
 
     }
 }

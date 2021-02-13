@@ -19,7 +19,7 @@ namespace InventoryApp.Controllers
         [HttpPost]
         public IActionResult addProduct(Product product)
         {
-            product.ID = System.Guid.NewGuid().ToString();
+            product.id = System.Guid.NewGuid().ToString();
 
             dBContext.Add(product);
             dBContext.SaveChanges();
@@ -50,7 +50,7 @@ namespace InventoryApp.Controllers
 
             List<StoreProducts> products = new List<StoreProducts>();
             foreach(StoreProducts product in storeProducts){
-                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                product.product = dBContext.products.FirstOrDefault(x => x.id == product.productID);
                 products.Add(product);
             }
             return Ok(products);
@@ -62,7 +62,7 @@ namespace InventoryApp.Controllers
 
             List<catergory> catergories = new List<catergory>();
             foreach(StoreProducts product in storeProducts){
-                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                product.product = dBContext.products.FirstOrDefault(x => x.id == product.productID);
                 catergory catergory = dBContext.catergories.FirstOrDefault(x => x.id == product.product.catergoryID);
                 catergories.Add(catergory);
             }
