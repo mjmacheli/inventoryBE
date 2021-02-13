@@ -5,7 +5,7 @@ namespace InventoryApp.Models
 {
     public class User
     {
-        public string Id { get; set; }
+        public string id { get; set; }
 
         public string names { get; set; }
 

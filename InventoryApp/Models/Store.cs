@@ -7,7 +7,7 @@ namespace InventoryApp.Models
 {
     public class Store
     {
-        public string Id { get; set; }
+        public string id { get; set; }
 
         public string name { get; set; }
 
@@ -23,7 +23,7 @@ namespace InventoryApp.Models
         public string area { get; set; }
 
         [ForeignKey("User")]
-        public string UserID { get; set; }
+        public User user { get; set; }
 
     }
 }
