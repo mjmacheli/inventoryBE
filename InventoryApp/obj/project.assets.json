@@ -6101,23 +6101,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/kylemanganyi/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/mjmacheli/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/InventoryApp.csproj",
+      "projectUniqueName": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/InventoryApp.csproj",
       "projectName": "InventoryApp",
-      "projectPath": "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/InventoryApp.csproj",
-      "packagesPath": "/Users/kylemanganyi/.nuget/packages/",
-      "outputPath": "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/obj/",
+      "projectPath": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/InventoryApp.csproj",
+      "packagesPath": "/Users/mjmacheli/.nuget/packages/",
+      "outputPath": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/kylemanganyi/.nuget/NuGet/NuGet.Config"
+        "/Users/mjmacheli/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6204,7 +6200,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }
