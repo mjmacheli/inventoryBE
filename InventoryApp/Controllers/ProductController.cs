@@ -34,7 +34,7 @@ namespace InventoryApp.Controllers
         }
 
         [HttpPost("add-catergory")]
-        public IActionResult addcatergory(catergory catergory){
+        public IActionResult addCatergory(catergory catergory){
             catergory.id = System.Guid.NewGuid().ToString();
 
             dBContext.Add(catergory);
@@ -57,7 +57,7 @@ namespace InventoryApp.Controllers
         }
 
         [HttpGet("get-store-catergory")] 
-        public IActionResult storeCAtergories(string storeID ){
+        public IActionResult storeCategories(string storeID ){
             var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID).ToList();
 
             List<catergory> catergories = new List<catergory>();

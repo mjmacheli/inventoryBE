@@ -9,12 +9,14 @@ namespace InventoryApp.Models
         public double stockPrice { get; set; }
         public int quantity { get; set; }
 
+        public int minLevel { get; set; }
+
         [ForeignKey("storeID")]
         public string storeID { get; set; }
         public Store store { get; set; }
 
         [ForeignKey("productID")]
         public string productID { get; set; }
-        public Product product { get; set; }
+        public virtual Product product { get; set; }
     }
 }

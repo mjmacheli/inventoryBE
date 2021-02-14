@@ -11,7 +11,7 @@ namespace InventoryApp.Models
 
         [ForeignKey("catergory")]
         public string catergoryID { get; set; }
-        public catergory catergory { get; set; }
+        public virtual catergory catergory { get; set; }
 
     }
 }
