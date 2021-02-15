@@ -17,7 +17,7 @@ namespace InventoryApp.Controllers
         [HttpPost]
         public IActionResult addStore(Store store)
         {
-            store.Id = System.Guid.NewGuid().ToString();
+            store.id = System.Guid.NewGuid().ToString();
             dBContext.Add(store);
             dBContext.SaveChanges();
 
@@ -36,7 +36,7 @@ namespace InventoryApp.Controllers
         [HttpGet("get-user-stores/{userID}")]
         public IActionResult getUserStores(string userID)
         {
-            return Ok(dBContext.stores.Where(x => x.UserID == userID));
+            return Ok(dBContext.stores.Where(x => x.userId == userID));
         }
 
         [HttpPost("add-store-product")]

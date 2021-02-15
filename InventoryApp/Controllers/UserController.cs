@@ -18,7 +18,7 @@ namespace InventoryApp.Controllers
         [HttpPost]
         public IActionResult Create(User user)
         {
-            user.Id = System.Guid.NewGuid().ToString();
+            user.id = System.Guid.NewGuid().ToString();
 
             dBContext.Add(user);
             dBContext.SaveChanges();

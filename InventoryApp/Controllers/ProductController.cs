@@ -19,7 +19,7 @@ namespace InventoryApp.Controllers
         [HttpPost]
         public IActionResult addProduct(Product product)
         {
-            product.ID = System.Guid.NewGuid().ToString();
+            product.id = System.Guid.NewGuid().ToString();
 
             dBContext.Add(product);
             dBContext.SaveChanges();
@@ -34,7 +34,7 @@ namespace InventoryApp.Controllers
         }
 
         [HttpPost("add-catergory")]
-        public IActionResult addcatergory(catergory catergory){
+        public IActionResult addCatergory(catergory catergory){
             catergory.id = System.Guid.NewGuid().ToString();
 
             dBContext.Add(catergory);
@@ -50,7 +50,7 @@ namespace InventoryApp.Controllers
 
             List<StoreProducts> products = new List<StoreProducts>();
             foreach(StoreProducts product in storeProducts){
-                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                product.product = dBContext.products.FirstOrDefault(x => x.id == product.productID);
                 products.Add(product);
             }
             return Ok(products);
@@ -69,12 +69,12 @@ namespace InventoryApp.Controllers
         }
 
         [HttpGet("get-store-catergory")] 
-        public IActionResult storeCAtergories(string storeID ){
+        public IActionResult storeCategories(string storeID ){
             var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID).ToList();
 
             List<catergory> catergories = new List<catergory>();
             foreach(StoreProducts product in storeProducts){
-                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                product.product = dBContext.products.FirstOrDefault(x => x.id == product.productID);
                 catergory catergory = dBContext.catergories.FirstOrDefault(x => x.id == product.product.catergoryID);
                 catergories.Add(catergory);
             }
