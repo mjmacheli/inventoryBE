@@ -49,6 +49,15 @@ namespace InventoryApp.Controllers
 
             return Ok(storeProduct);
         }
+
+        [HttpPost("update-store-product")]
+        public IActionResult updateStoreProduct(StoreProducts storeProduct)
+        {
+            dBContext.Update(storeProduct);
+            dBContext.SaveChanges();
+
+            return Ok(storeProduct);
+        }
     }
 
 }

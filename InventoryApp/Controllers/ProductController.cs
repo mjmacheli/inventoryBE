@@ -56,6 +56,18 @@ namespace InventoryApp.Controllers
             return Ok(products);
         }
 
+        [HttpGet("get-store-product-by-barcode")] 
+        public IActionResult storeProduct(string barcode, string storeID ){
+            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.product.barcode == barcode).ToList();
+
+            List<StoreProducts> products = new List<StoreProducts>();
+            foreach(StoreProducts product in storeProducts){
+                product.product = dBContext.products.FirstOrDefault(x => x.ID == product.productID);
+                products.Add(product);
+            }
+            return Ok(products);
+        }
+
         [HttpGet("get-store-catergory")] 
         public IActionResult storeCAtergories(string storeID ){
             var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID).ToList();
