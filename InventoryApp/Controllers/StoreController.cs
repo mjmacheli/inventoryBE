@@ -53,7 +53,12 @@ namespace InventoryApp.Controllers
         [HttpPost("update-store-product")]
         public IActionResult updateStoreProduct(StoreProducts storeProduct)
         {
-            dBContext.Update(storeProduct);
+            StoreProducts product = dBContext.storeProducts.FirstOrDefault(x => x.id == storeProduct.id);
+            product.sellingPrice = storeProduct.sellingPrice;
+            product.stockPrice = storeProduct.stockPrice;
+            product.quantity = storeProduct.quantity;
+            product.minLevel = storeProduct.minLevel;
+            dBContext.Update(product);
             dBContext.SaveChanges();
 
             return Ok(storeProduct);
@@ -61,7 +66,7 @@ namespace InventoryApp.Controllers
 
         [HttpPost("sale")]
         public IActionResult sell(sales sales){
-            dBContext.Update(sales);
+            dBContext.Add(sales);
             dBContext.SaveChanges();
 
             return Ok(sales);
