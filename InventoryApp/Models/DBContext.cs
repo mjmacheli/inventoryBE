@@ -15,5 +15,6 @@ namespace InventoryApp.Models
         public DbSet<catergory> catergories { get; set; }
         public DbSet<Product> products { get; set; }
         public DbSet<StoreProducts> storeProducts { get; set; }
+        public DbSet<sales> sales { get; set; }
     }
 }
