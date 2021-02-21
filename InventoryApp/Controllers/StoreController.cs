@@ -76,7 +76,7 @@ namespace InventoryApp.Controllers
         [HttpGet("total-sales/{storeId}")]
         public IActionResult totalSales(string storeId)
         {
-            return Ok(dBContext.sales.Where(x => x.id == storeId));
+            return Ok(dBContext.sales.Where(x => x.storeID == storeId));
         }
     }
 
