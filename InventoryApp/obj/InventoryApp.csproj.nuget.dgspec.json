@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/InventoryApp.csproj": {}
+    "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/InventoryApp.csproj": {}
   },
   "projects": {
-    "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/InventoryApp.csproj": {
+    "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/InventoryApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/InventoryApp.csproj",
+        "projectUniqueName": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/InventoryApp.csproj",
         "projectName": "InventoryApp",
-        "projectPath": "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/InventoryApp.csproj",
-        "packagesPath": "/Users/kylemanganyi/.nuget/packages/",
-        "outputPath": "/Users/kylemanganyi/Documents/mj/inventoryBE/InventoryApp/obj/",
+        "projectPath": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/InventoryApp.csproj",
+        "packagesPath": "/Users/mjmacheli/.nuget/packages/",
+        "outputPath": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/kylemanganyi/.nuget/NuGet/NuGet.Config"
+          "/Users/mjmacheli/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
