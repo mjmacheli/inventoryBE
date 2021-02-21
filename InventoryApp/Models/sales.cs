@@ -5,8 +5,8 @@ namespace InventoryApp.Models
     public class sales
     {
         public string id { get; set; }
-        public string totalSale { get; set; }
-        public string totalCost { get; set; }
+        public double totalSale { get; set; }
+        public double totalCost { get; set; }
 
         [ForeignKey("store")]
         public string storeID { get; set; }
