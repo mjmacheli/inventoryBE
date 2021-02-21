@@ -66,6 +66,7 @@ namespace InventoryApp.Controllers
 
         [HttpPost("sale")]
         public IActionResult sell(sales sales){
+            sales.id = System.Guid.NewGuid().ToString();
             dBContext.Add(sales);
             dBContext.SaveChanges();
 
