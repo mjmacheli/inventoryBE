@@ -78,6 +78,12 @@ namespace InventoryApp.Controllers
         {
             return Ok(dBContext.sales.Where(x => x.storeID == storeId));
         }
+
+        [HttpGet("all-sales")]
+        public IActionResult totalSales(string storeId)
+        {
+            return Ok(dBContext.sales.ToList());
+        }
     }
 
 }
