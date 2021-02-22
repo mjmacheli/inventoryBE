@@ -35,6 +35,12 @@ namespace InventoryApp.Controllers
 
         [HttpPost("add-catergory")]
         public IActionResult addCatergory(catergory catergory){
+            catergory catergory1 = dBContext.catergories.FirstOrDefault(x => x.name.ToUpper() == catergory.name.ToUpper());
+
+            if(catergory1 != null){
+                return Ok(catergory1);
+            }
+
             catergory.id = System.Guid.NewGuid().ToString();
 
             dBContext.Add(catergory);
