@@ -80,7 +80,7 @@ namespace InventoryApp.Controllers
         }
 
         [HttpGet("all-sales")]
-        public IActionResult totalSales(string storeId)
+        public IActionResult allSales(string storeId)
         {
             return Ok(dBContext.sales.ToList());
         }
