@@ -52,7 +52,7 @@ namespace InventoryApp.Controllers
 
         [HttpGet("get-store-products")] 
         public IActionResult storeProducts(string catergoryID, string storeID ){
-            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.product.catergoryID == catergoryID).ToList();
+            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.isDeleted == false && x.product.catergoryID == catergoryID).ToList();
 
             List<StoreProducts> products = new List<StoreProducts>();
             foreach(StoreProducts product in storeProducts){
@@ -85,6 +85,16 @@ namespace InventoryApp.Controllers
                 catergories.Add(catergory);
             }
             return Ok(catergories);
+        }
+
+        [HttpDelete("{productId}")]
+        public IActionResult RemoveStoreProduct(string productId)
+        {
+            var product = dBContext.storeProducts.FirstOrDefault(x => x.id == productId);
+            product.isDeleted = true;
+            dBContext.Update(product);
+            dBContext.SaveChanges();
+            return Ok(product);
         }
     }
 }
