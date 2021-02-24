@@ -25,8 +25,6 @@ namespace InventoryApp.Controllers
         }
 
 
-
-
         [HttpGet]
         public IActionResult getStores()
         {
@@ -36,7 +34,7 @@ namespace InventoryApp.Controllers
         [HttpGet("get-user-stores/{userID}")]
         public IActionResult getUserStores(string userID)
         {
-            return Ok(dBContext.stores.Where(x => x.userId == userID));
+            return Ok(dBContext.stores.Where(x => x.userId == userID && x.isDeleted == false));
         }
 
         [HttpPost("add-store-product")]
@@ -65,7 +63,7 @@ namespace InventoryApp.Controllers
         }
 
         [HttpPost("sale")]
-        public IActionResult sell(sales sales){
+        public IActionResult sell(sales sales) {
             sales.id = System.Guid.NewGuid().ToString();
             dBContext.Add(sales);
             dBContext.SaveChanges();
@@ -83,6 +81,16 @@ namespace InventoryApp.Controllers
         public IActionResult allSales(string storeId)
         {
             return Ok(dBContext.sales.ToList());
+        }
+
+        [HttpDelete("/{storeId}")]
+        public IActionResult RemoveStore(string storeId)
+        {
+            var store = dBContext.stores.FirstOrDefault(s => s.id == storeId);
+            store.isDeleted = true;
+            dBContext.Update(store);
+            dBContext.SaveChanges();
+            return Ok(store);
         }
     }
 

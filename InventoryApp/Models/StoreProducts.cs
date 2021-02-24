@@ -15,6 +15,8 @@ namespace InventoryApp.Models
         public string storeID { get; set; }
         public Store store { get; set; }
 
+        public bool isDeleted { get; set; }
+
         [ForeignKey("productID")]
         public string productID { get; set; }
         public virtual Product product { get; set; }

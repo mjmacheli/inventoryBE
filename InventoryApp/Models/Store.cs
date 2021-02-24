@@ -19,6 +19,7 @@ namespace InventoryApp.Models
 
         public string area { get; set; }
 
+        public bool isDeleted { get; set; }
 
         [ForeignKey("User")]
         public string userId { get; set; }

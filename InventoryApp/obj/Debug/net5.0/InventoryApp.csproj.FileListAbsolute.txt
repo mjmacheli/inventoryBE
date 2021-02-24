@@ -98,6 +98,7 @@
 /Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/bin/Debug/net5.0/runtimes/win/native/libzstd.dll
 /Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/bin/Debug/net5.0/runtimes/win/native/snappy32.dll
 /Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/bin/Debug/net5.0/runtimes/win/native/snappy64.dll
+/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/Debug/net5.0/InventoryApp.csprojAssemblyReference.cache
 /Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/Debug/net5.0/InventoryApp.GeneratedMSBuildEditorConfig.editorconfig
 /Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/Debug/net5.0/InventoryApp.AssemblyInfoInputs.cache
 /Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/Debug/net5.0/InventoryApp.AssemblyInfo.cs
