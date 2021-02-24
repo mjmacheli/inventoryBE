@@ -76,7 +76,7 @@ namespace InventoryApp.Controllers
 
         [HttpGet("get-store-catergory")] 
         public IActionResult storeCategories(string storeID ){
-            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID).Distinct().ToList();
+            var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.isDeleted == false).Distinct().ToList();
 
             List<catergory> catergories = new List<catergory>();
             foreach(StoreProducts product in storeProducts){
