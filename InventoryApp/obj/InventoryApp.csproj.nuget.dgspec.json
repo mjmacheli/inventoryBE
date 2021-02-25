@@ -14,7 +14,7 @@
         "outputPath": "/Users/mjmacheli/Documents/code/web/InventoryApp/InventoryApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mjmacheli/.nuget/NuGet/NuGet.Config"
+          "/Users/mjmacheli/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

@@ -74,6 +74,12 @@ namespace InventoryApp.Controllers
             return Ok(products);
         }
 
+        [HttpGet("category/{id}")]
+        public IActionResult categoryById(string id)
+        {
+            return Ok(dBContext.catergories.FirstOrDefault(c => c.id == id));
+        }
+
         [HttpGet("get-store-catergory")] 
         public IActionResult storeCategories(string storeID ){
             var storeProducts = dBContext.storeProducts.Where(x => x.storeID == storeID && x.isDeleted == false).Distinct().ToList();
