@@ -42,7 +42,7 @@ namespace InventoryApp.Controllers
         [HttpPost("login")]
         public IActionResult Login(string email, string password)
         {
-            var user = dBContext.users.FirstOrDefault(x => x.email == email && x.password == password);
+            var user = dBContext.users.FirstOrDefault(x => x.email.ToUpper() == email.ToUpper() && x.password == password);
             if (user == null)
             {
                 return NotFound();
