@@ -8,10 +8,12 @@ namespace InventoryApp.Models
         public string barcode { get; set; }
         public string productName { get; set; }
         public string productImage { get; set; }
+        
+        public string producer { get; set; }
+
 
         [ForeignKey("catergory")]
         public string catergoryID { get; set; }
         public virtual catergory catergory { get; set; }
-
     }
 }
