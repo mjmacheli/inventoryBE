@@ -36,7 +36,7 @@ namespace InventoryApp.Controllers
          [HttpGet("all-products")]
         public IActionResult getProducts()
         {
-            return Ok(dBContext.products.FindAll().ToList());
+            return Ok(dBContext.products.ToList());
         }
 
         [HttpPost("add-catergory")]
