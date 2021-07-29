@@ -32,6 +32,12 @@ namespace InventoryApp.Controllers
         {
             return Ok(dBContext.products.FirstOrDefault(x => x.barcode == barcode));
         }
+        
+         [HttpGet("all-products")]
+        public IActionResult getProducts()
+        {
+            return Ok(dBContext.products.FindAll().ToList());
+        }
 
         [HttpPost("add-catergory")]
         public IActionResult addCatergory(catergory catergory){
